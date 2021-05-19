@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "https://pbs.twimg.com/profile_images/1126434695196086273/AM9gay3A_100x100.jpg",
+    "link": "",
+    "text": "Timo Kats"
+  },
+  "text": {
+    "more": "Association graph for the articles in Timo\u0027s bachelor thesis.",
+    "intro": "Association graph for the articles in Timo\u0027s bachelor thesis.",
+    "title": " "
+  },
+  "legend": {
+    "edgeLabel": "association",
+    "colorLabel": "node degree",
+    "nodeLabel": "word"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Label",
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": "occurrences"
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 2.5,
+      "minEdgeSize": 0.25,
+      "minNodeSize": 2,
+      "maxNodeSize": 8
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
