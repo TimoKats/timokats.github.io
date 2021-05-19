@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "https://www.apply.leiden.edu/oiem/images-all/ul_logo.png",
+    "link": "",
+    "text": " "
+  },
+  "text": {
+    "more": "Association graph for the articles and advertorials in Timo\u0027s bachelor thesis.",
+    "intro": "Association graph for the articles and advertorials in Timo\u0027s bachelor thesis.",
+    "title": " "
+  },
+  "legend": {
+    "edgeLabel": "association",
+    "colorLabel": "node degree",
+    "nodeLabel": "word"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Label",
+    "hoverBehavior": "dim"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": false
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "straight",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 10,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 2.5,
+      "minEdgeSize": 0.25,
+      "minNodeSize": 2,
+      "maxNodeSize": 8
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}
