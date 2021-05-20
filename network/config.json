@@ -14,7 +14,7 @@
   },
   "legend": {
     "edgeLabel": "association",
-    "colorLabel": "red: editorial, blue: commercial",
+    "colorLabel": "blue: editorial, red: commercial",
     "nodeLabel": "word"
   },
   "features": {
