@@ -14,7 +14,7 @@
   },
   "legend": {
     "edgeLabel": "association",
-    "colorLabel": "node degree",
+    "colorLabel": "red: editorial, blue: commercial",
     "nodeLabel": "word"
   },
   "features": {
