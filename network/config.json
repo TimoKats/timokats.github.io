@@ -8,7 +8,7 @@
     "text": " "
   },
   "text": {
-    "more": "Association graph for the articles and advertorials in Timo\u0027s bachelor thesis.",
+    "more": "Association graph for the articles and advertorials in Timo\u0027s bachelor thesis. The associations in this graph are based on the amount of time (percentage wise) two terms appear in the same sentence. The nodes in this graph are the terms from the lexicon and their sizes are based on their degree.",
     "intro": "Association graph for the articles and advertorials in Timo\u0027s bachelor thesis.",
     "title": " "
   },
