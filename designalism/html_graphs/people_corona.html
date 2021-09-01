@@ -1,0 +1,116 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 90%;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "Bernd Damme", "label": "Bernd Damme", "shape": "dot", "size": 14.8, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/bedrijven-zorginstellingen-facade-hulptroepen\u0027\u003eOok bedrijven en zorginstellingen trapten in goededoelen-fa\u00e7ade van Sywert van Lienden \u0026 co\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/top-vws-wist-van-sywerts-luchtkasteel\u0027\u003eTop VWS wist dat Sywert van Lienden een luchtkasteel bouwde \u2013 toch kreeg hij zijn deal\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/van-lienden-kreeg-van-vws-wel-voorkeursbehandeling\u0027\u003eVolksgezondheid gaf Sywert van Lienden vergaande voorkeursbehandeling\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/sywert-van-lienden-sluisde-9-miljoen-euro-naar-persoonlijke-holding\u0027\u003eSywert van Lienden sluisde 9 miljoen euro naar persoonlijke holding\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Sywert van Lienden", "label": "Sywert van Lienden", "shape": "dot", "size": 17.2, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/bedrijven-zorginstellingen-facade-hulptroepen\u0027\u003eOok bedrijven en zorginstellingen trapten in goededoelen-fa\u00e7ade van Sywert van Lienden \u0026 co\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/podcast-jacht-miljoenen-sywert\u0027\u003ePodcast |De jacht op de miljoenen van Sywert\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/top-vws-wist-van-sywerts-luchtkasteel\u0027\u003eTop VWS wist dat Sywert van Lienden een luchtkasteel bouwde \u2013 toch kreeg hij zijn deal\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/van-lienden-kreeg-van-vws-wel-voorkeursbehandeling\u0027\u003eVolksgezondheid gaf Sywert van Lienden vergaande voorkeursbehandeling\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/sywert-van-lienden-sluisde-9-miljoen-euro-naar-persoonlijke-holding\u0027\u003eSywert van Lienden sluisde 9 miljoen euro naar persoonlijke holding\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/sywerts-mondkapjesdeal-goed-voor-circa-30-miljoen\u0027\u003eMondkapjesdeal leverde Sywert van Lienden c.s. tot 30 miljoen euro op\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Camille van Gestel", "label": "Camille van Gestel", "shape": "dot", "size": 14.8, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/bedrijven-zorginstellingen-facade-hulptroepen\u0027\u003eOok bedrijven en zorginstellingen trapten in goededoelen-fa\u00e7ade van Sywert van Lienden \u0026 co\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/top-vws-wist-van-sywerts-luchtkasteel\u0027\u003eTop VWS wist dat Sywert van Lienden een luchtkasteel bouwde \u2013 toch kreeg hij zijn deal\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/van-lienden-kreeg-van-vws-wel-voorkeursbehandeling\u0027\u003eVolksgezondheid gaf Sywert van Lienden vergaande voorkeursbehandeling\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/sywert-van-lienden-sluisde-9-miljoen-euro-naar-persoonlijke-holding\u0027\u003eSywert van Lienden sluisde 9 miljoen euro naar persoonlijke holding\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Martin van Rijn", "label": "Martin van Rijn", "shape": "dot", "size": 13.6, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/top-vws-wist-van-sywerts-luchtkasteel\u0027\u003eTop VWS wist dat Sywert van Lienden een luchtkasteel bouwde \u2013 toch kreeg hij zijn deal\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/van-lienden-kreeg-van-vws-wel-voorkeursbehandeling\u0027\u003eVolksgezondheid gaf Sywert van Lienden vergaande voorkeursbehandeling\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/feike-sijbesma-en-staatssteun-leidse-pillenfabriek\u0027\u003eHoe twee zakenrelaties van coronagezant Feike Sijbesma miljoenen aan staatssteun binnen hengelden\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Hugo de Jonge", "label": "Hugo de Jonge", "shape": "dot", "size": 14.8, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/corona-killing-lowlands-cultuur\u0027\u003eLowlands-baas Eric van Eerdenburg: \u2018Je kunt het culturele leven niet blijven stilleggen\u2019\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/grenzeloos-beleid-is-eindeloze-pandemie\u0027\u003eMet een beleid zonder grenzen krijg je een pandemie zonder einde\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/van-lienden-kreeg-van-vws-wel-voorkeursbehandeling\u0027\u003eVolksgezondheid gaf Sywert van Lienden vergaande voorkeursbehandeling\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/testsamenleving-extreem-duur-veroorzaakt-uitsluiting-gezonde-mensen\u0027\u003e\u2018Testsamenleving is onzinnig, exorbitant duur en leidt tot uitsluiting van gezonde mensen\u2019\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Feike Sijbesma", "label": "Feike Sijbesma", "shape": "dot", "size": 11.2, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/feike-sijbesma-en-staatssteun-leidse-pillenfabriek\u0027\u003eHoe twee zakenrelaties van coronagezant Feike Sijbesma miljoenen aan staatssteun binnen hengelden\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Mark Rutte", "label": "Mark Rutte", "shape": "dot", "size": 12.4, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/grenzeloos-beleid-is-eindeloze-pandemie\u0027\u003eMet een beleid zonder grenzen krijg je een pandemie zonder einde\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/feike-sijbesma-en-staatssteun-leidse-pillenfabriek\u0027\u003eHoe twee zakenrelaties van coronagezant Feike Sijbesma miljoenen aan staatssteun binnen hengelden\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Wouter Bos", "label": "Wouter Bos", "shape": "dot", "size": 11.2, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/feike-sijbesma-en-staatssteun-leidse-pillenfabriek\u0027\u003eHoe twee zakenrelaties van coronagezant Feike Sijbesma miljoenen aan staatssteun binnen hengelden\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Wopke Hoekstra", "label": "Wopke Hoekstra", "shape": "dot", "size": 11.2, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/feike-sijbesma-en-staatssteun-leidse-pillenfabriek\u0027\u003eHoe twee zakenrelaties van coronagezant Feike Sijbesma miljoenen aan staatssteun binnen hengelden\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Tom Middendorp", "label": "Tom Middendorp", "shape": "dot", "size": 13.6, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/testsamenleving-dood-en-begraven\u0027\u003eDe testsamenleving is dood en begraven voordat-ie begonnen is\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/testsamenleving-extreem-duur-veroorzaakt-uitsluiting-gezonde-mensen\u0027\u003e\u2018Testsamenleving is onzinnig, exorbitant duur en leidt tot uitsluiting van gezonde mensen\u2019\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/entreetesten-verloren-kort-geding\u0027\u003eBouw testlocaties voor honderden miljoenen dendert door na verloren kort geding\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Dick Benschop", "label": "Dick Benschop", "shape": "dot", "size": 11.2, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/gratis-geld-en-nog-laat-klm-haar-flexwerkers-spartelen\u0027\u003eGratis geld, en nog laat KLM haar flexwerkers spartelen\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Wouter Koolmees", "label": "Wouter Koolmees", "shape": "dot", "size": 12.4, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/gratis-geld-en-nog-laat-klm-haar-flexwerkers-spartelen\u0027\u003eGratis geld, en nog laat KLM haar flexwerkers spartelen\u003c/a\u003e\u003cbr\u003e", "\u003ca href=\u0027https://www.ftm.nl/artikelen/coronamiljoenen-werkgeverssubsidie-now-verdwijnen-door-faillissementen-uwv-kijkt-toe\u0027\u003eCoronamiljoenen verdwijnen in zwart gat faillissementen en UWV kijkt toe\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Marc Kaptein", "label": "Marc Kaptein", "shape": "dot", "size": 11.2, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/duurzaam-kapitalisme-pandemie\u0027\u003eOok voor het bestrijden van een pandemie is een duurzamer kapitalisme nodig\u003c/a\u003e\u003cbr\u003e"]}, {"id": "Milton Friedman", "label": "Milton Friedman", "shape": "dot", "size": 11.2, "title": ["\u003ca href=\u0027https://www.ftm.nl/artikelen/duurzaam-kapitalisme-pandemie\u0027\u003eOok voor het bestrijden van een pandemie is een duurzamer kapitalisme nodig\u003c/a\u003e\u003cbr\u003e"]}]);
+        edges = new vis.DataSet([{"from": "Bernd Damme", "to": "Sywert van Lienden", "weight": 1}, {"from": "Bernd Damme", "to": "Camille van Gestel", "weight": 1}, {"from": "Bernd Damme", "to": "Martin van Rijn", "weight": 1}, {"from": "Bernd Damme", "to": "Hugo de Jonge", "weight": 1}, {"from": "Sywert van Lienden", "to": "Camille van Gestel", "weight": 1}, {"from": "Sywert van Lienden", "to": "Hugo de Jonge", "weight": 1}, {"from": "Sywert van Lienden", "to": "Martin van Rijn", "weight": 1}, {"from": "Camille van Gestel", "to": "Martin van Rijn", "weight": 1}, {"from": "Camille van Gestel", "to": "Hugo de Jonge", "weight": 1}, {"from": "Martin van Rijn", "to": "Feike Sijbesma", "weight": 1}, {"from": "Martin van Rijn", "to": "Hugo de Jonge", "weight": 1}, {"from": "Martin van Rijn", "to": "Mark Rutte", "weight": 1}, {"from": "Martin van Rijn", "to": "Wouter Bos", "weight": 1}, {"from": "Martin van Rijn", "to": "Wopke Hoekstra", "weight": 1}, {"from": "Hugo de Jonge", "to": "Mark Rutte", "weight": 1}, {"from": "Hugo de Jonge", "to": "Tom Middendorp", "weight": 1}, {"from": "Dick Benschop", "to": "Wouter Koolmees", "weight": 1}, {"from": "Feike Sijbesma", "to": "Mark Rutte", "weight": 1}, {"from": "Feike Sijbesma", "to": "Wouter Bos", "weight": 1}, {"from": "Feike Sijbesma", "to": "Wopke Hoekstra", "weight": 1}, {"from": "Mark Rutte", "to": "Wouter Bos", "weight": 1}, {"from": "Mark Rutte", "to": "Wopke Hoekstra", "weight": 1}, {"from": "Wouter Bos", "to": "Wopke Hoekstra", "weight": 1}, {"from": "Marc Kaptein", "to": "Milton Friedman", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "repulsion": {
+            "centralGravity": 0.2,
+            "damping": 0.09,
+            "nodeDistance": 150,
+            "springConstant": 0.05,
+            "springLength": 100
+        },
+        "solver": "repulsion",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>

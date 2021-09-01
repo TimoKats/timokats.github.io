@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@200&display=swap" rel="stylesheet">
+    <title>Frontpage experiment</title>
+</head>
+<style>
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    #infobox {
+        border: rgb(175, 175, 175);
+        border-width: 2px;
+        border-style: solid;
+        margin-left: 7;
+        margin-right: 7;
+        padding: 10;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 7;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background-color: #111;
+    }
+
+    iframe {
+        overflow: hidden;
+        border: none;
+    }
+</style>
+<script>
+    function hide_show(id) {
+        var x = document.getElementById(id);
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+<ul>
+    <li><a onclick="hide_show('coronadossier')">Corona dossier</a></li>
+    <li><a onclick="hide_show('moneydossier')">Nederland-moneyland dossier</a></li>
+    <li><a onclick="hide_show('combodossier')">Combinatie</a></li>
+    <li><a onclick="alert('Deze grafieken tonen de co-occurence graphs voor ftm dossiers. Gemaakt door Timo Kats');">About</a></li>
+</ul>
+
+<div id="content">
+    <div id="coronadossier">
+        <iframe src="/html_graphs/organisations_corona.html" width="49%" height="400px" scrolling="no"></iframe>
+        <iframe src="/html_graphs/people_corona.html" width="49%" height="400px" style="float:right"
+            scrolling="no"></iframe>
+
+        <div id="infobox">
+            De linker grafiek toont de organisaties in het coronadossier en of ze met elkaar verbonden zijn via de artikelen. De rechter grafiek doet hetzelfde maar dan voor de genoemde personen in het dossier. Hover over een node (organisatie of persoon) om de artikelen in kwestie te zien.
+        </div>
+    </div>
+    <div id="moneydossier" style="display:none">
+        <iframe src="/html_graphs/organisations_moneyland.html" width="49%" height="400px" scrolling="no"></iframe>
+        <iframe src="/html_graphs/people_moneyland.html" width="49%" height="400px" style="float:right"
+            scrolling="no"></iframe>
+
+            <div id="infobox">
+                De linker grafiek toont de organisaties in het moneyland-nederland dossier en of ze met elkaar verbonden zijn via de artikelen. De rechter grafiek doet hetzelfde maar dan voor de genoemde personen in het dossier. Hover over een node (organisatie of persoon) om de artikelen in kwestie te zien.
+            </div>
+    </div>
+    <div id="combodossier" style="display:none">
+        <iframe src="/html_graphs/organisations_combo.html" width="49%" height="400px" scrolling="no"></iframe>
+        <iframe src="/html_graphs/people_combo.html" width="49%" height="400px" style="float:right"
+            scrolling="no"></iframe>
+
+            <div id="infobox">
+                De linker grafiek toont de organisaties in het coronadossier en moneyland-nederland dossier en of ze met elkaar verbonden zijn via de artikelen. Als een node blauw is dan is het afkomstig van het coronadossier, als een node rood is dan is het afkomstig van het moneyland-nederland dossier. De rechter grafiek doet hetzelfde maar dan voor de genoemde personen in het dossier. Hover over een node (organisatie of persoon) om de artikelen in kwestie te zien.
+
+            </div>
+    </div>
+</div>
+
+</html>
