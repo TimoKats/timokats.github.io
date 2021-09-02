@@ -18,7 +18,7 @@
         margin-left: 7;
         margin-right: 7;
         margin-top: 5;
-        margin-bottom: 5;
+        margin-bottom: 10;
         padding: 10;
     }
 
@@ -51,21 +51,10 @@
         border: none;
     }
 </style>
-<script>
-    function hide_show(id) {
-        var x = document.getElementById(id);
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-</script>
-
 <ul>
-    <li><a onclick="hide_show('coronadossier')">Corona dossier</a></li>
-    <li><a onclick="hide_show('moneydossier')">Nederland-moneyland dossier</a></li>
-    <li><a onclick="hide_show('combodossier')">Combinatie</a></li>
+    <li><a href="#coronadossier">Corona dossier</a></li>
+    <li><a href="#moneydossier">Nederland-moneyland dossier</a></li>
+    <li><a href="#combodossier"Combinatie</a></li>
     <li><a onclick="alert('Deze grafieken tonen de co-occurence graphs voor ftm dossiers. Gemaakt door Timo Kats');">About</a></li>
 </ul>
 
@@ -79,7 +68,7 @@
             De linker grafiek toont de organisaties in het coronadossier en of ze met elkaar verbonden zijn via de artikelen. De rechter grafiek doet hetzelfde maar dan voor de genoemde personen in het dossier. Hover over een node (organisatie of persoon) om de artikelen in kwestie te zien.
         </div>
     </div>
-    <div id="moneydossier" style="display:none">
+    <div id="moneydossier">
         <iframe src="https://timokats.github.io/designalism/html_graphs/organisations_moneyland.html" width="49%" height="400px" scrolling="no"></iframe>
         <iframe src="https://timokats.github.io/designalism/html_graphs/people_moneyland.html" width="49%" height="400px" style="float:right"
             scrolling="no"></iframe>
@@ -88,7 +77,7 @@
                 De linker grafiek toont de organisaties in het moneyland-nederland dossier en of ze met elkaar verbonden zijn via de artikelen. De rechter grafiek doet hetzelfde maar dan voor de genoemde personen in het dossier. Hover over een node (organisatie of persoon) om de artikelen in kwestie te zien.
             </div>
     </div>
-    <div id="combodossier" style="display:none">
+    <div id="combodossier">
         <iframe src="https://timokats.github.io/designalism/html_graphs/organisations_combo.html" width="49%" height="400px" scrolling="no"></iframe>
         <iframe src="https://timokats.github.io/designalism/html_graphs/people_combo.html" width="49%" height="400px" style="float:right"
             scrolling="no"></iframe>
