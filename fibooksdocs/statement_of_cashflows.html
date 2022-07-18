@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>statement_of_cashflows module &mdash; fibooks 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> fibooks
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">fibooks</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">fibooks</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>statement_of_cashflows module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/statement_of_cashflows.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-statement_of_cashflows">
+<span id="statement-of-cashflows-module"></span><h1>statement_of_cashflows module<a class="headerlink" href="#module-statement_of_cashflows" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">statement_of_cashflows.</span></span><span class="sig-name descname"><span class="pre">statement_of_cashflows</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">company_name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class contains the income statement.
+The important objects are: content (contains the data),
+template (contains the excel template),
+standard_categories (contains categories like ‘operations’ and ‘investing’) and
+custom_categories (contains categories that are added by the user)</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.add_account">
+<span class="sig-name descname"><span class="pre">add_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.add_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.add_account" title="Permalink to this definition"></a></dt>
+<dd><p>Adds an account to content. The category is an optional parameter.
+For example, you can use this function to add ‘sales $20’ in ‘operations’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.add_custom_category">
+<span class="sig-name descname"><span class="pre">add_custom_category</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accounts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.add_custom_category"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.add_custom_category" title="Permalink to this definition"></a></dt>
+<dd><p>Adds a custom category along with the accounts that belong to that category.
+For example, you can use this function to define ‘international operations’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.convert_excel_to_csv">
+<span class="sig-name descname"><span class="pre">convert_excel_to_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_out</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.convert_excel_to_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.convert_excel_to_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Imports an excel spreadsheet and exports the financial statement from that spreadsheet as csv.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.convert_excel_to_pandas">
+<span class="sig-name descname"><span class="pre">convert_excel_to_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.convert_excel_to_pandas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.convert_excel_to_pandas" title="Permalink to this definition"></a></dt>
+<dd><p>Imports an excel spreadsheet and exports the financial statement from that spreadsheet as a pandas df.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.delete_account">
+<span class="sig-name descname"><span class="pre">delete_account</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.delete_account"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.delete_account" title="Permalink to this definition"></a></dt>
+<dd><p>Deletes an account. Takes the account name as its only variable.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.export_csv">
+<span class="sig-name descname"><span class="pre">export_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.export_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.export_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the current financial statement as a csv file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.export_pandas">
+<span class="sig-name descname"><span class="pre">export_pandas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.export_pandas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.export_pandas" title="Permalink to this definition"></a></dt>
+<dd><p>Exports the current financial statement as a pandas dataframe.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.get_cash_change">
+<span class="sig-name descname"><span class="pre">get_cash_change</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.get_cash_change"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.get_cash_change" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the change in cash.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.get_cash_close">
+<span class="sig-name descname"><span class="pre">get_cash_close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.get_cash_close"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.get_cash_close" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the closing cash. Cash opening can be set as an attribute under ‘cash_opening’</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.get_fcf">
+<span class="sig-name descname"><span class="pre">get_fcf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">capex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'capex'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.get_fcf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.get_fcf" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the free cash flow of a financial statement.
+Takes the name of capital expenditures (set to capex) as an optional parameter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.get_total">
+<span class="sig-name descname"><span class="pre">get_total</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">category</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.get_total"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.get_total" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the total value of a category (e.g. revenues). Takes category as its only parameter.
+Note, the category can be standard or one of the custom/added categories.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.load_csv">
+<span class="sig-name descname"><span class="pre">load_csv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.load_csv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.load_csv" title="Permalink to this definition"></a></dt>
+<dd><p>Loads a financial statement from a csv file. The file seperator is an optional parameter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.load_excel">
+<span class="sig-name descname"><span class="pre">load_excel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_row</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_column</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.load_excel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.load_excel" title="Permalink to this definition"></a></dt>
+<dd><p>Loads a financial statement from an excel spreadsheet. Takes the filename as its only mandetory parameter.
+However, if the spreadsheet has a lot of ‘noise’ the user can also define the min/max rows/columns to extract from.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.load_pandas">
+<span class="sig-name descname"><span class="pre">load_pandas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.load_pandas"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.load_pandas" title="Permalink to this definition"></a></dt>
+<dd><p>Loads a financial statement from a pandas dataframe.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.set_mapping">
+<span class="sig-name descname"><span class="pre">set_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.set_mapping"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.set_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>Sets mapping for account names. Takes a dict as a parameter
+For example, cogs can be mapped to cost of goods sold.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.set_standard_categories">
+<span class="sig-name descname"><span class="pre">set_standard_categories</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.set_standard_categories"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.set_standard_categories" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="statement_of_cashflows.statement_of_cashflows.set_template">
+<span class="sig-name descname"><span class="pre">set_template</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statement_of_cashflows.html#statement_of_cashflows.set_template"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#statement_of_cashflows.statement_of_cashflows.set_template" title="Permalink to this definition"></a></dt>
+<dd><p>Resets the standard template for reading excel files. Takes a json file as parameter.
+Note, this json file should have the standard categories as fields (and ignore) and the last entry of a category as value.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Timo Kats @ Alexandre Kobrin.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
