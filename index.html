@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Timo Kats</title>
+  <script>
+    function setTheme() {
+      const sessionTheme = sessionStorage.getItem('theme');
+      const root = document.documentElement;
+      if (sessionTheme !== null) {
+        root.dataset.theme = sessionTheme;
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        root.dataset.theme = "dark";
+      } else {
+        root.dataset.theme = "light";
+      }
+    }
+
+    function toggleTheme() {
+      const root = document.documentElement;
+      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+      sessionStorage.setItem('theme', root.dataset.theme);
+    }
+    setTheme();
+  </script>
+</head>
+
+<body>
+  <div id="top">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <b style="font-size:25px;">TimoKats</b>
+      <button onclick="toggleTheme()" id="theme-toggle">Switch theme</button>
+    </div>
+    <hr>
+  </div>
+
+  <div id="middle">
+    <!-- ABOUT -->
+    <div id="box">
+      <div id="box-title">
+        <h4>About</h4>
+      </div>
+      <p>Hi, my name is Timo. Welcome to my personal website. I'm a self-proclaimed "computer alchemist" from The Netherlands. This is a fancy way of saying I break computers, and occasionally fix them. </p>
+      <p>This website serves as an overview of my projects and writings over the years.</p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div id="box">
+      <div id="box-title">
+        <h4>Projects</h4>
+      </div>
+      <p style="margin-bottom:-5px;">CLI tools</p>
+      <ul>
+        <li><a href="https://github.com/TimoKats/mdrss">mdrss</a>: Converts a folder with markdown files to an RSS feed.</li>
+        <li><a href="https://github.com/TimoKats/cly">cly</a>: Create feature-rich aliases using YAML.</li>
+        <li><a href="https://github.com/TimoKats/nt">nt</a>: Take notes directly in CLI with self-hosting and clipboard integration.</li>
+      </ul>
+      <p style="margin-bottom:-5px;">Libraries</p>
+      <ul>
+        <li><a href="https://github.com/TimoKats/pylan">pylan</a>: Python library for complex time-series projections.</li>
+      </ul>
+    </div>
+
+    <!-- DOWNLOADS -->
+    <div id="box">
+      <div id="box-title">
+        <h4>Downloads</h4>
+      </div>
+      <ul>
+        <li>2021: <a href="downloads/2021/advertorials_paper.pdf">advertorials paper</a>, <a href="downloads/2021/advertorials_presentation.pdf">advertorials presentation</a>, </li>
+        <li>2023: <a href="downloads/2023/relevance_feedback_paper.pdf">relevance feedback paper</a>, <a href="downloads/2023/relevance_feedback_presentation.pdf">relevance feedback presentation</a>, </li>
+        <li>2025: <a href="downloads/2025/pylan_presentation.pdf">pylan presentation</a>, <a href="downloads/2025/resume.pdf">resume</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="bottom">
+    <hr />
+    <p>Last updated: September 2026</p>
+  </div>
+</body>
+
+</html>
